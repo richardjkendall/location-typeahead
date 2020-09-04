@@ -1,24 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import AsyncExample from './TypeAhead';
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Container>
+        <Row>
+          <Col>
+          <h1 style={{marginTop: "20px", marginBottom: "20px"}}>Address Typeahead Demo</h1>
+          <p>Start typing your address and possible candidates will appear...</p>
+          <AsyncExample />
+          </Col>
+        </Row>
+      </Container>
+      
     </div>
   );
 }
