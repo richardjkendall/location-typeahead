@@ -4,8 +4,8 @@ import { AsyncTypeahead } from 'react-bootstrap-typeahead';
 
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 
-//const SEARCH_URI = 'https://location.richardjameskendall.com/typeahead';
-const SEARCH_URI = 'http://localhost:8080/typeahead';
+const SEARCH_URI = 'https://location.richardjameskendall.com/typeahead';
+//const SEARCH_URI = 'http://localhost:8080/typeahead';
 
 const AsyncExample = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -69,7 +69,7 @@ const AsyncExample = () => {
         placeholder="Type your address"
         filterBy={() => true}
       />
-      {queryStart > 0 && <p>Query time {queryEnd - queryStart}ms</p>}
+      {queryStart > 0 && <p style={{marginTop: "10px"}}>Query time {queryEnd - queryStart}ms</p>}
     </div>
   );
 };
