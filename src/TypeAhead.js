@@ -15,11 +15,14 @@ const AsyncExample = () => {
 
   const summariseAddress = (address) => {
     var addressString = "";
+    if(address.addressSiteName) {
+      addressString = address.addressSiteName + " ";
+    }
     if(address.unitNumber && address.unitTypeCode) {
-      addressString = address.unitTypeCode + " " + address.unitNumber + " ";
+      addressString = addressString + address.unitTypeCode + " " + address.unitNumber + " ";
     }
     if(address.levelNumber && address.levelTypeCode) {
-      addressString = address.levelTypeCode + " " + address.levelNumber + " ";
+      addressString = addressString + address.levelTypeCode + " " + address.levelNumber + " ";
     }
     if(address.roadNumber1) {
       if(address.roadNumber2) {
