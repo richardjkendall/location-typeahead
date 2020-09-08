@@ -5,13 +5,13 @@ import { AsyncTypeahead } from 'react-bootstrap-typeahead';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 
 const SEARCH_URI = 'https://location.richardjameskendall.com/typeahead';
-//const SEARCH_URI = 'http://localhost:8080/typeahead';
 
 const AsyncExample = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [options, setOptions] = useState([]);
   const [queryStart, setQueryStart] = useState(0);
   const [queryEnd, setQueryEnd] = useState(0);
+  const [selectedAddress, setSelectedAddress] = useState("");
 
   const summariseAddress = (address) => {
     var addressString = "";
@@ -60,6 +60,13 @@ const AsyncExample = () => {
       });
   };
 
+  const handleSelect = (e) => {
+    console.log(e);
+    if(e.length > 0) {
+      setSelectedAddress(e[0].id);
+    }
+  };
+
   return (
     <div>
       <AsyncTypeahead
@@ -71,8 +78,10 @@ const AsyncExample = () => {
         options={options}
         placeholder="Type your address"
         filterBy={() => true}
+        onChange={handleSelect}
       />
       {queryStart > 0 && <p style={{marginTop: "10px"}}>Query time {queryEnd - queryStart}ms</p>}
+      {selectedAddress !== "" && <p>Selected address: {selectedAddress}</p>}
     </div>
   );
 };
