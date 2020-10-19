@@ -4,7 +4,7 @@ import { AsyncTypeahead } from 'react-bootstrap-typeahead';
 
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 
-const SEARCH_URI = 'https://location.richardjameskendall.com/typeahead';
+const SEARCH_URI = 'https://loc-k8s.richardjameskendall.com/typeahead';
 
 const AsyncExample = () => {
   const [isLoading, setIsLoading] = useState(false);
